@@ -20,5 +20,14 @@ app.post('/login', (req, res) => {
     console.log(req.body);
   const email = req.body.email;
   const password = req.body.password;
+  res.status(200).json({message: 'login successful'});
   //check if the email and password are correct
+});
+
+//create a route for the login with email and password as body and return a json response
+app.post('/register', (req, res) => {
+  console.log('registered new user ' + req.body.email);
+  const email = req.body.email;
+  const password = req.body.password;
+  res.status(200).json({message: 'registered'});
 });
