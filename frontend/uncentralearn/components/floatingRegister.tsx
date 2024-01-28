@@ -22,13 +22,15 @@ export default function FloatingRegister() {
             password: password
         })
             .then(function (response) {
-                console.log(response);
+                console.log(response.data)
+                const hash = response.data.message;
+                localStorage.setItem("email", email);
+                router.push('https://wallet.vottun.io/?hash='+hash+'&username='+email)
             })
             .catch(function (error) {
                 console.log(error);
             })
-        setTimeout('', 2000);
-        router.push('/dashboard', { scroll: false })
+        
             
     }
 
