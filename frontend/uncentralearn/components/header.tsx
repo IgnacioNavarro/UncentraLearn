@@ -14,13 +14,13 @@ export default function Header() {
                 </Link>
             </div>
             <div className="flex items-center p-4 space-x-4">
-                <Link href="/courses">
+                <Link href="#courses">
                     <span className="text-xl">Cursos</span>
                 </Link>
-                <Link href="/sponsors">
+                <Link href="#sponsors">
                     <span className="text-xl">Patrocinadores</span>
                 </Link>
-                <Link href="/jobs">
+                <Link href="#jobs">
                     <span className="text-xl">Empleo</span>
                 </Link>
             </div>

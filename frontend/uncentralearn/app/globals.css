@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    animation-duration: 1.5s ease;
 }
 
 @layer utilities {
