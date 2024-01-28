@@ -1,15 +1,30 @@
+'use client';
 import { FormEvent } from "react";
-
+import axios from 'axios';
 export default function FloatingLogin() {
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
+        const emailuser = localStorage.getItem("email")
+        //OBTAIN WALLET
+        axios.post('http://localhost:8009/wallet', {
+            email: emailuser,
+        }).then(function (response) {
+            console.log(response)
+            const wallet = response.data.message.accountAddress;
+            const strategy = response.data.message.strategy;
+            console.log(wallet)
+            localStorage.setItem("wallet", wallet);
+            localStorage.setItem("strategy", strategy);
+
+        })
+
         const formData = new FormData(event.currentTarget)
         const response = await fetch('/api/login', {
             method: 'POST',
             body: formData,
-        })
+        })  
 
         // Handle response if necessary
         const data = await response.json()
@@ -19,12 +34,11 @@ export default function FloatingLogin() {
 
 
     return (
-        <div className="flex flex-row h-screen bg-white">
-
+        <div className="flex flex-row h-[75vh] bg-white">
             <div className="flex flex-col  items-center w-2/4 px-10 py-40">
                 <h2 className="text-4xl text-black">Elige tus áreas de interés</h2>
                 <div className="flex flex-col items-center justify-center">
-                    <form className="flex flex-col py-20 space-y-2">
+                    <form className="flex flex-col py-20 space-y-2" onSubmit={onSubmit}>
                         <div className="flex flex-row border-2">
                             <input type="checkbox" className="border-2 rounded py-2 text-gray-800" value={"WEB3"} />
                             <label className="text-gray-800 px-2">WEB3</label>

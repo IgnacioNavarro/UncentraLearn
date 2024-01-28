@@ -46,7 +46,7 @@ export default function FloatingLogin() {
             </div>
 
             <div className="flex flex-col  items-center w-2/4 px-10 py-40">
-                <h2 className="text-4xl text-black">Comienza tu registro</h2>
+                <h2 className="text-4xl text-black">Inicia sesión</h2>
                 <div className="flex flex-col items-center justify-center w-full">
                     <form className="flex flex-col items-center justify-center w-full py-20 space-y-4" onSubmit={login}>
                         <input type="text" placeholder="Email" className="border-2 rounded px-4 py-2 w-96 text-gray-800" onChange={(e) => setEmail(e.target.value)} value={email}/>
