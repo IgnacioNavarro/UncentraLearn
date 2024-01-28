@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Header from '../../components/header';
 import FloatingLogin from '@/components/floatingLogin';
@@ -6,9 +7,20 @@ import HeaderLogin from '@/components/header2';
 import CourseCard from '@/components/CourseCard';
 import CourseCardIn from '@/components/CourseCardIn';
 import TokenLogo from '@/components/tokenlogo';
+import axios from 'axios';
 
 
 export default function Course() {
+
+    function pay(){
+        console.log("PAYING")
+        axios.post('http://localhost:8009/pay', {
+        }).then(function (response) {
+            console.log(response)
+        })
+    }
+
+
     return (
         <div className='bg-white h-screen'>
             <HeaderLogin />
@@ -30,7 +42,7 @@ export default function Course() {
 
                 <div className="flex flex-row bg-white px-10 m-20 h-20">
                 <button className="bg-rose-50 hover:bg-rose-100 text-white font-bold py-4 px-32">
-                    <a href="/course">Pagar Ahora</a>
+                    <a onClick={pay}>Pagar Ahora</a>
                 </button>
                 </div>
 

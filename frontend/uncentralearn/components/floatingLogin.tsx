@@ -2,26 +2,17 @@
 import { FormEvent } from "react";
 import axios from 'axios';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 
 
 export default function FloatingLogin() {
+
+    const router = useRouter()
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     //hacer peticion on submit a la api de login puerto 8009
-    async function onSubmit(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-
-        console.log("hola")
-        const formData = new FormData(event.currentTarget)
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            body: formData,
-        })
-        
-      }
-
     function login(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         console.log("hola");
@@ -32,6 +23,8 @@ export default function FloatingLogin() {
         })
             .then(function (response) {
                 console.log(response);
+                router.push('http://localhost:3000/home')
+
             })
             .catch(function (error) {
                 console.log(error);

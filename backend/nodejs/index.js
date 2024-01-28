@@ -102,12 +102,16 @@ app.post('/pay', (req, res) => {
   console.log('user has wallet ' + req.body.email);
   const email = req.body.email;
   const postData = {
-    "userEmail": email,
+      "contractAddress": "0x5d1B7232b8bccebe2124AEAF9eB9d6f41CAEd2c9",
+      "recipient": "0x2f497d39C28d064Fb249A8e4aB247b31d2afF5dc",
+      "network": 80001,
+      "amount": 8000000000000000000,
+      "gasLimit": 6000000
 };
 // Define the URL of the server you want to send the POST request to
-const url = 'https://api.vottun.tech/cwll/v1/evm/wallet/custodied/address';
+const url = 'https://api.vottun.tech/erc/v1/erc20/transfer';
 var config = {
-  method: 'get',
+  method: 'post',
   url: url,
   headers: { 
     'Authorization': 'Bearer '+ apiKey,
