@@ -2,16 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "./logo";
 import LogoCompleto from "./logoCompleto";
+import LogoCompletoWhite from "./logoCompletoWhite";
+import LogoWhite from "./logowhite";
 
 export default function Header() {
     return (
         <header className="flex items-center bg-rose-50">
-            <div className="flex items-center justify-between px-10 color-white">
+            <div className="flex items-center justify-between px-5 py-2 color-white">
                 <Link href="/">
-                    <LogoCompleto/>
+                    <LogoWhite />
                 </Link>
             </div>
-            <div className="flex items-start p-4 space-x-4">
+            <div className="flex items-center p-4 space-x-4">
                 <Link href="/courses">
                     <span className="text-xl">Cursos</span>
                 </Link>
@@ -25,6 +27,7 @@ export default function Header() {
             <div className="flex items-center justify-end space-x-4">
 
                 <input type="text" placeholder="Buscar" className="border-2 border-gray-300 rounded-md p-1" />
+
 
 
                 <button className="bg-white hover:bg-rose-50 hover:text-white text-rose-50 py-2 px-4 rounded">
