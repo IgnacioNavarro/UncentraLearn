@@ -1,7 +1,12 @@
 // Import the express module
 const express=require('express');
+const cors = require('cors');
 // Create an instance of the express application
 const app=express();
+// Middleware to parse JSON bodies
+app.use(express.json());
+// Use the CORS middleware
+app.use(cors());
 // Specify a port number for the server
 const port=8009;
 // Start the server and listen to the port

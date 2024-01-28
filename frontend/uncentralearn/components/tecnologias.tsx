@@ -3,7 +3,7 @@ import CourseCard from "./CourseCard";
 export default function Tecnologias() {
     return (
         <div className="flex flex-col bg-white p-10">
-            <h1 className="text-4xl text-black justify-center">Especialízate con a nuestros cursos</h1>
+            <h1 className="text-4xl text-black justify-center">Especialízate con nuestros cursos</h1>
 
             <div className="flex flex-row py-8 justify-between">
             <CourseCard courseName="Curso Fullstack" courseAuthor="Ignacio Navarro" courseRating="240" coursePrice="8" courseImage="/image 5.png" />
