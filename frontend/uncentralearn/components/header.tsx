@@ -5,6 +5,7 @@ import LogoCompleto from "./logoCompleto";
 import LogoCompletoWhite from "./logoCompletoWhite";
 import LogoWhite from "./logowhite";
 
+//if login true, hide buttons login and show new component
 export default function Header() {
     return (
         <header className="flex justify-between items-center bg-rose-50">

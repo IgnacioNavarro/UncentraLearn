@@ -1,8 +1,19 @@
+'use client';
 import TokenLogo from "./tokenlogo";
 
 export default function CourseCard(props: {courseName:string, courseAuthor:string, courseRating:string, coursePrice:string, courseImage:string}) {
+    
+
+    //onclick function go to course page
+
+    function goToCourse() {
+        window.location.href = "/course";
+    }
+
+    
+    
     return (
-        <div className="flex flex-row bg-white h-96 justify-center items-center space-x-4" id="courses">
+        <div className="flex flex-row bg-white h-96 justify-center items-center space-x-4 hover:cursor-pointer" onClick={goToCourse}>
             <div className="flex flex-col border-solid border-2 border-black">
                 <img src={props.courseImage} alt="Logo" className="w-max" />
                 <p className="text-2xl text-black justify-center py-2 px-4 pr-6 font-bold">{props.courseName}</p>

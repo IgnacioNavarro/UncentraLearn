@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         "rose-50": "#BF046A",
+        "green-50": "#00BFA6",
+        "blue-50": "#48C7E533",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
