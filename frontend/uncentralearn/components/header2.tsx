@@ -54,9 +54,9 @@ export default function HeaderLogin() {
                         </defs>
                     </svg>
                 </a>
+                <a href="/profile">                <img src="/photo.png" alt="Logo" className="w-10 h-10 rounded-full" /></a>
 
-                <img src="/photo.png" alt="Logo" className="w-10 h-10 rounded-full" />
-                
+
                 <TokenLogoWhite />
                 <p className="text-2xl text-white justify-center py-2 pr-6 font-bold">100</p>
 
