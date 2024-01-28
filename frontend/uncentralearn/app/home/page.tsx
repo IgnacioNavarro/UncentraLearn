@@ -5,18 +5,15 @@ import Testimonial from "@/components/Testimonial";
 import Tecnologias from "@/components/tecnologias";
 import Benefits from "@/components/beneficiosLanding";
 import Empresas from "@/components/empresas";
+import HeaderLogin from "@/components/header2";
+import LandingLogin from "@/components/LandingAfterLogin";
 
-
-//if login is true then show HeaderLogin, LandingLogin, delete testimonial, benefits and empresas
 export default function Home() {
   return (
     <div>
-    <Header/>
-    <Landing/>
-    <Testimonial/>
+    <HeaderLogin/>
+    <LandingLogin/>
     <Tecnologias/>
-    <Benefits/>
-    <Empresas/>
     </div>
   );
 }

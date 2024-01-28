@@ -18,13 +18,13 @@ export default function CourseCardIn(props: { courseName: string, courseAuthor: 
                 </div>
                 <div className="flex flex-row space-x-2">
                     <button className="bg-green-50 hover:bg-rose-100 text-white font-bold py-4 px-28">
-                        <a href="/course">Añadir al Carrito</a>
+                        <a href="/cart">Añadir al Carrito</a>
                     </button>
 
                 </div>
                 <div className="flex flex-row">
                     <button className="bg-rose-50 hover:bg-rose-100 text-white font-bold py-4 px-32">
-                        <a href="/course">Comprar Ahora</a>
+                        <a href="/cart">Comprar Ahora</a>
                     </button>
                 </div>
 

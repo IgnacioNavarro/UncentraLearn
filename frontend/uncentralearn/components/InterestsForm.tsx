@@ -1,11 +1,14 @@
 'use client';
 import { FormEvent } from "react";
 import axios from 'axios';
+import { useRouter } from 'next/navigation'
 export default function FloatingLogin() {
+
+    const router = useRouter()    
+
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-
         const emailuser = localStorage.getItem("email")
         //OBTAIN WALLET
         axios.post('http://localhost:8009/wallet', {
@@ -17,19 +20,13 @@ export default function FloatingLogin() {
             console.log(wallet)
             localStorage.setItem("wallet", wallet);
             localStorage.setItem("strategy", strategy);
-
+            console.log("Exit")
+            router.push('http://localhost:3000/home')
         })
-
-        const formData = new FormData(event.currentTarget)
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            body: formData,
-        })  
-
-        // Handle response if necessary
-        const data = await response.json()
-        console.log(data)
-        //server side redirige a la pagina de seleccion
+        .catch(function (error) {
+            console.log("Exit with error")
+            console.log(error);
+        })
     }
 
 
